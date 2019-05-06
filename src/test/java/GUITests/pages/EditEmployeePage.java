@@ -13,7 +13,7 @@ public class EditEmployeePage {
     @FindBy(xpath = "//p[contains(text(),'Delete')]")
     public static WebElement eeDeleteButton; //edit employee page - delete button
 
-    //Function that update rmployee
+    //Function that updates rmployee
     public static void updateEmloyee(){
         AddNewEmployeePage.firstName ="AC_FN_"+MyDriver.randomString(4);
         AddNewEmployeePage.firstNameI(AddNewEmployeePage.firstName);
@@ -26,7 +26,7 @@ public class EditEmployeePage {
         updateB();
     }
 
-    //Action that click on Update button
+    //Action that clickss on Update button
     public static void updateB() {
         MyDriver.clickButtonCheckIfElementIsVisible(eeUpdateButton,
                 EmployeesListPage.elCreateButton,
@@ -35,7 +35,7 @@ public class EditEmployeePage {
                 "Edit employee page do not contain Update button.");
     }
 
-    //Action that click on Login button
+    //Action that clickss on Login button
     public static void deleteB() {
         MyDriver.clickButton(eeDeleteButton,
                 "Edit employee page: Add button is clickable.",
@@ -43,7 +43,7 @@ public class EditEmployeePage {
                 "Edit employee page do not contain Add button.");
     }
 
-    //Constructor that add Page Object Pattern to this class
+    //Constructor that adds Page Object Pattern to this class
     public static void setPageObject () {
         PageFactory.initElements(MyDriver.wd, new EditEmployeePage());
     }

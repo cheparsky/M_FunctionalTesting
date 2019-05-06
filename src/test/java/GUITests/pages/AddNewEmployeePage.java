@@ -27,7 +27,7 @@ public class AddNewEmployeePage {
     @FindBy(xpath = "//button[contains(text(),'Add')]")
     public static WebElement aneAddButton; //add new employee page - add button
 
-    //Function that create new rmployee
+    //Function that creates new rmployee
     public static void createNewEmployee(){
         firstName = "AC_FN_"+MyDriver.randomString(4);
         lastName = "AC_LN_"+MyDriver.randomString(4);
@@ -40,7 +40,7 @@ public class AddNewEmployeePage {
         addB();
     }
 
-    //Action that enter first name
+    //Action that enters first name
     public static void firstNameI(String firstName) {
         MyDriver.inputData(aneFirstNameInput,
                 firstName,
@@ -48,7 +48,7 @@ public class AddNewEmployeePage {
                 "Add new employee page do not contain first name input.");
     }
 
-    //Action that enter last name
+    //Action that enters last name
     public static void lastNameI(String lastName) {
         MyDriver.inputData(aneLastNameInput,
                 lastName,
@@ -56,7 +56,7 @@ public class AddNewEmployeePage {
                 "Add new employee page do not contain last name input.");
     }
 
-    //Action that enter start date
+    //Action that enters start date
     public static void startDateI(String startDate) {
         MyDriver.inputData(aneStartDateInput,
                 startDate,
@@ -64,7 +64,7 @@ public class AddNewEmployeePage {
                 "Add new employee page do not contain start date input.");
     }
 
-    //Action that enter email
+    //Action that enters email
     public static void emailI(String email) {
         MyDriver.inputData(aneEmailInput,
                 email,
@@ -72,7 +72,7 @@ public class AddNewEmployeePage {
                 "Add new employee page do not contain email input.");
     }
 
-    //Action that click on Login button
+    //Action that clickss on Login button
     public static void addB() {
         MyDriver.clickButtonCheckIfElementIsVisible(aneAddButton,
                 EmployeesListPage.elCreateButton,
@@ -81,7 +81,7 @@ public class AddNewEmployeePage {
                 "Add new employee page do not contain Add button.");
     }
 
-    //Constructor that add Page Object Pattern to this class
+    //Constructor that adds Page Object Pattern to this class
     public static void setPageObject () {
         PageFactory.initElements(MyDriver.wd, new AddNewEmployeePage());
     }

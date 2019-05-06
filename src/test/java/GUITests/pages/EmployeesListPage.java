@@ -28,7 +28,7 @@ public class EmployeesListPage {
     @FindBy(xpath = "//p[contains(text(),'Logout')]")
     public static WebElement elLogoutButton; //employees list - logout button
 
-    //Action that click on Create button
+    //Action that clickss on Create button
     public static void createB() {
         MyDriver.clickButtonCheckIfElementIsVisible(EmployeesListPage.elCreateButton,
                 AddNewEmployeePage.aneAddButton,
@@ -38,7 +38,7 @@ public class EmployeesListPage {
         );
     }
 
-    //Action that click on Edit button
+    //Action that clicks on Edit button
     public static void editB() {
         MyDriver.clickButtonCheckIfElementIsVisible(EmployeesListPage.elEditButton,
                 EditEmployeePage.eeUpdateButton,
@@ -48,7 +48,7 @@ public class EmployeesListPage {
         );
     }
 
-    //Action that click on Delete button
+    //Action that clicks on Delete button
     public static void deleteB() {
         MyDriver.clickButton(EmployeesListPage.elDeleteButton,
                 "Employees list page: Delete button is clickable.",
@@ -57,7 +57,7 @@ public class EmployeesListPage {
         );
     }
 
-    //Action that click on first element on list of employees
+    //Action that clicks on first element on list of employees
     public static void selectFirstElementInListOfEmployee() {
         MyDriver.clickButton(elFirstElementInListOfEmployee,
                 "Employees list page: first element in list is clickable.",
@@ -66,7 +66,7 @@ public class EmployeesListPage {
         );
     }
 
-    //Action that return created and/or updated employee
+    //Action that returns created and/or updated employee
     public static WebElement getCreatedAndUpdatedEmployee() {
         for (int i = 0; i <= 10; i++) {
             if (elListOfEmployee.isEmpty()) {
@@ -91,7 +91,7 @@ public class EmployeesListPage {
         return null;
     }
 
-    //Action that select created and/or updated employee on list of employees
+    //Action that selects created and/or updated employee on list of employees
     public static void selectEmployee() {
         WebElement employee = EmployeesListPage.getCreatedAndUpdatedEmployee();
         MyDriver.clickButton(employee,
@@ -102,7 +102,7 @@ public class EmployeesListPage {
 
     }
 
-    //Action that select created and/or updated employee on list of employees
+    //Action that selects created and/or updated employee on list of employees
     public static void selectEmployeeByDoubleClicking() {
         WebElement employee = EmployeesListPage.getCreatedAndUpdatedEmployee();
         if (MyDriver.isElementVisible(employee)){
@@ -113,7 +113,7 @@ public class EmployeesListPage {
     }
 
 
-    //Action that check if list of employees contain updated employee
+    //Action that checks if list of employees contain updated employee
     public static boolean checkIfListContainUpdatedEmployee() {
         WebElement employee = EmployeesListPage.getCreatedAndUpdatedEmployee();
         if (employee == null) return false;
@@ -125,7 +125,7 @@ public class EmployeesListPage {
         }
     }
 
-    //Action that check if list of employees not contain updated employee
+    //Action that checks if list of employees not contain updated employee
     public static boolean checkIfListNotContainUpdatedEmployee() {
         boolean state = false;
         for (int i = 0; i <= 20; i++) {
@@ -152,7 +152,7 @@ public class EmployeesListPage {
         MyDriver.wd.switchTo().alert().accept();
     }
 
-    //Action that click on Logout button
+    //Action that clicks on Logout button
     public static void logoutB() {
         MyDriver.clickButtonCheckIfPageLoaded(elLogoutButton,
                 "http://cafetownsend-angular-rails.herokuapp.com/login",
@@ -162,7 +162,7 @@ public class EmployeesListPage {
         );
     }
 
-    //Constructor that add Page Object Pattern to this class
+    //Constructor that adds Page Object Pattern to this class
     public static void setPageObject() {
         PageFactory.initElements(MyDriver.wd, new EmployeesListPage());
     }

@@ -16,7 +16,7 @@ public class LoginPage {
     @FindBy(xpath = "//button[@type='submit']")
     public static WebElement lpLoginButton; //login page - login button
 
-    // Function that login user
+    // Function that logins user
     public static void login(String login, String pass) {
         System.out.println("Process of login process is started.");
         loginI(login);
@@ -24,7 +24,7 @@ public class LoginPage {
         loginB();
     }
 
-    //Action that enter login
+    //Action that enters login
     public static void loginI(String login) {
         MyDriver.inputData(lpLoginInput,
                 login,
@@ -32,7 +32,7 @@ public class LoginPage {
                 "Login page do not contain login input.");
     }
 
-    //Action that enter password
+    //Action that enters password
     public static void passwordI(String pass) {
         MyDriver.inputData(lpPasswordInput,
                 pass,
@@ -40,7 +40,7 @@ public class LoginPage {
                 "Login page do not contain password input.");
     }
 
-    //Action that click on Login buttn
+    //Action that clicks on Login buttn
     public static void loginB() {
         MyDriver.clickButtonCheckIfElementIsVisible(lpLoginButton,
                 EmployeesListPage.elCreateButton,
@@ -49,7 +49,7 @@ public class LoginPage {
                 "Login page do not contain Login button.");
     }
 
-    //Constructor that addPage Object Pattern to this class
+    //Constructor that adds Page Object Pattern to this class
     public static void setPageObject() {
         PageFactory.initElements(MyDriver.wd, new LoginPage());
     }

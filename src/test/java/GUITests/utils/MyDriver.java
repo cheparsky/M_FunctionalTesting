@@ -41,12 +41,12 @@ public class MyDriver {
         return wd;
     }
 
-    // We define functions that are responsible for setting the waiting time for an element
+    // We define the function that is responsible for setting the waiting time for an element
     public static void setWebDriverWait(int timeSec) {
         timeToWait = timeSec;
     }
 
-    // We define functions that is setting Page Object Pattern for our pages
+    // We define the function that sets Page Object Pattern for our pages
     public static void setAllPageObject(){
         LoginPage.setPageObject();
         EmployeesListPage.setPageObject();
@@ -54,7 +54,7 @@ public class MyDriver {
         EditEmployeePage.setPageObject();
     }
 
-    // We define functions which shows if element is present on page
+    // We define the function that shows if element is present on page
     public static boolean isElementVisible(WebElement e) {
         int attempts = 0;
         while (attempts < 2) {
@@ -78,7 +78,7 @@ public class MyDriver {
         return false;
     }
 
-    // We define functions which checks if button is present and if is clickable
+    // We define the function that checks if button is present and if is clickable
     public static void clickButton(WebElement element,  //webelement
                                    String successMsg, //Message when button is clickable
                                    String errMsg1,   //Message when button is non-clickable
@@ -96,7 +96,7 @@ public class MyDriver {
         }
     }
 
-    // We define a function that checks if the button is, whether it is clickable and whether it redirects to the appropriate page
+    // We define the function that checks if the button is, whether it is clickable and whether it redirects to the appropriate page
     public static void clickButtonCheckIfPageLoaded(WebElement element, //Webelement
                                                     String pageTo,  // The page to which driver must go after pressing the button
                                                     String successMsg, // The message when going to the correct page
@@ -122,7 +122,7 @@ public class MyDriver {
         }
     }
 
-    // Define a function that checks if the button is, is it clickable and whether the target element on the page is shown after clicking
+    // Define the function that checks if the button is, is it clickable and whether the target element on the page is shown after clicking
     public static void clickButtonCheckIfElementIsVisible(WebElement element, //Webelement
                                                           WebElement elementCheck,  // Web element with which we check whether the button works
                                                           String successMsg, // Message if elementCheck is on the page
@@ -147,7 +147,7 @@ public class MyDriver {
         }
     }
 
-    // Define a function that checks if the button is, is it clickable and whether the target element on the page is not shown after clicking
+    // Define the function that checks if the button is, is it clickable and whether the target element on the page is not shown after clicking
     public static void clickButtonCheckIfElementIsNotVisible(WebElement element, //Webelement
                                                              WebElement elementCheck,  // Web element with which we check whether the button works
                                                              String successMsg, // Message if elementCheck is on the page
@@ -172,7 +172,7 @@ public class MyDriver {
         }
     }
 
-    /// We define a function that checks whether there is input, whether you can enter data in the input and enter data
+    /// We define the function that checks whether there is input, whether you can enter data in the input and enter data
     public static void inputData(WebElement element, //Webelement
                                  String data, // Text entered to input
                                  String errMsg1,  // Message in case of non-editable input
@@ -193,7 +193,7 @@ public class MyDriver {
         }
     }
 
-    // We define a function that checks if there is an input, if you can delete data in the paste and delete data
+    // We define the function that checks if there is an input, if you can delete data in the paste and delete data
     public static void clearData(WebElement element, //Webelement
                                  String errMsg1,  // Message in case of non-editable input
                                  String errMsg2){	// Message if there is no input
@@ -211,7 +211,7 @@ public class MyDriver {
         }
     }
 
-    // We define functions, whether is a checkbox exist, whether it is clickable and selects it
+    // We define the function that checks whether a checkbox exist, whether it is clickable and selects it
     public static void checkboxClick(WebElement element,  //Webelement
                                      String errMSg1, // Message in case of correct checkbox state
                                      String errMSg2,  // Message in case of non-clickable checkbox
@@ -235,7 +235,7 @@ public class MyDriver {
         }
     }
 
-    // We define functions, whether is a checkbox exist, whether it is clickable and unchecked
+    // We define the functions that checks whether a checkbox exist, whether it is clickable and unchecked
     public static void checkboxUnClick(WebElement element,  //Webelement
                                        String errMSg1, // Message in case of correct checkbox state
                                        String errMSg2,  // Message in case of non-clickable checkbox
@@ -259,7 +259,7 @@ public class MyDriver {
         }
     }
 
-    // Define a function that checks if the given and current pages are the same, if the same is OK
+    // Define the function that checks if the given and current pages are the same, if the same is OK
     public static boolean ifWWWEqual(String page) {
         int pageLength = page.length();
         try {
@@ -276,7 +276,7 @@ public class MyDriver {
         }
     }
 
-    // Define a function that checks if the given and current pages are not the same, if the same is OK
+    // Define the function that checks if the given and current pages are not the same, if the same is OK
     public static boolean ifWWWNotEqual(String page) {
         int pageLength = page.length();
         try {
@@ -313,14 +313,14 @@ public class MyDriver {
         System.err.println(errMesage);
     }
 
-    //Function that highlight element
+    //The function that highlights element
     public static void highLighterMethod(WebElement element) throws InterruptedException {
         JavascriptExecutor js = (JavascriptExecutor) wd;
         js.executeScript("arguments[0].setAttribute('style', 'background: yellow; border: 2px solid red;');", element);
         //Thread.sleep(500);
     }
 
-    // Function that create random string
+    // The function that creates random string
 
     private static final String ALPHA_NUMERIC_STRING = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
     public static String randomString(int count) {
@@ -332,7 +332,7 @@ public class MyDriver {
         return builder.toString();
     }
 
-    // Function that create random date
+    // The function that creates random date
 
     public static int createRandomIntBetween(int start, int end) {
         return start + (int) Math.round(Math.random() * (end - start));
